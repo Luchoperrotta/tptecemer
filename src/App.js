@@ -17,7 +17,7 @@ export const App = () => {
     fetch(`https://api.giphy.com/v1/gifs/search?q=${string}&api_key=${GIPHY_API_KEY}`)
     .then((Response) => Response.json())
     .then((data) => setCatGif( data.data[0].url))
-    .then((data) => console.log( data.data[0].url))
+    //.then((data) => console.log( data.data[0].url))
     
   };
   const callAPI = () => {
@@ -32,7 +32,7 @@ export const App = () => {
   return(
     <>
     <h1>{catFact}</h1>
-    <img alt="inspeccionar imagen, no renderiza por los cors" src={catGif} crossOrigin/>
+    <img alt="inspeccionar imagen, no renderiza por los cors" src={catGif} crossOrigin="true"/>
     <BotonEjecutar handleClick={callAPI} />
     </>
   ); 
