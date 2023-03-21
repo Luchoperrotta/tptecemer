@@ -32,7 +32,7 @@ export const App = () => {
   return(
     <>
     <h1>{catFact}</h1>
-    <img src={catGif} crossOrigin/>
+    <img alt="hola" src={catGif} crossOrigin/>
     <BotonEjecutar handleClick={callAPI} />
     </>
   ); 
