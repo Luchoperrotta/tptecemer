@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 export const App = () => {
-  const GIPHY_API_KEY = "dc6zaTOxFJmzC"
+  //const GIPHY_API_KEY = "dc6zaTOxFJmzC"
   const [catFact, setCatFact] = useState('')
   const [catGif, setCatGif] = useState('')
 
@@ -21,10 +21,7 @@ export const App = () => {
   }
 
   const callGiphyAPI = (string) => {
-    // const word = "bear"; // aquí puedes reemplazar "cat" con una variable que contenga la cadena de búsqueda del usuario
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=XaGG5vM6Q5p8mUkhCV4QdbTtwfgEgHSD&q=${string}&limit=25&offset=0&rating=g&lang=en`, { mode: "cors" })
-      // fetch(`https://api.giphy.com/v1/gifs/search?q=${string}&api_key=${GIPHY_API_KEY}`, { mode: "cors" })
-
       .then((Response) => Response.json())
       .then((data) => setCatGif(data.data[0]?.images?.original?.url || null))
       .catch((error) => {
